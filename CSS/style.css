@@ -1,15 +1,18 @@
-h1{
-  text-align: center;
-}
+.flag {
+    min-height: 6.5rem;
+  }
+  
+  .flag p {
+    font-size: .8rem;
+    color: #777;
+  }
 
-#flags-container {
+#container_flags {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
 }
 
-.flag {
-  margin: 10px;
+h1{
   text-align: center;
-  width: 120px;
 }
