@@ -1,15 +1,21 @@
 import countries from './model/flags.js';
 
-function bandeira_card(countries) {
+function criarBandeiraCard(pais) {
+  const { id, name } = pais;
+
   return `
     <div class="flag col-2 my-2 text-center">
-      <img src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/${countries.id}.svg" alt="${countries.name}" style="height: 6rem; width: 6rem;">
-      <p>${countries.name}</p>
+      <img 
+        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/${id}.svg" 
+        alt="${name}" 
+        style="height: 6rem; width: 6rem;">
+      <p>${name}</p>
     </div>
   `;
 }
 
-document.getElementById("flags-container").insertAdjacentHTML(
-  "beforeend",
-  countries.map(countries => bandeira_card(countries)).join('')
-);
+const container = document.getElementById("flags-container");
+
+const cards = countries.map(criarBandeiraCard).join('');
+
+container.insertAdjacentHTML("beforeend", cards);
